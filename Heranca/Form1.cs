@@ -144,8 +144,15 @@ namespace Casa.Financas.Visual
             cadastro.ShowDialog();
         }
 
+        private void buttonExcluirCliente_Click(object sender, EventArgs e)
+        {
+            contas.RemoveAt(indiceSelecionado);
+            comboContas.Items.RemoveAt(indiceSelecionado);
+            comboSaldo.Text = "";
+            comboNumero.Text = "";
+        }
     }
-}
+} 
 
 #region Caixa Eletronico
 //Conta ca = new ContaCorrente();
