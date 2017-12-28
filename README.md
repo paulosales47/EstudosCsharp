@@ -8,21 +8,21 @@ O projeto está dividido em quatro namespaces principais
 3.	Casa.Financas.Visual
 4.	Casa.Financas.ExceptionEntidade
 
-##Casa.Financas.Entidades
+### Casa.Financas.Entidades
 <p>Trata-se do namespace de todas as classes sem função específica dentro do projeto.</p>
 
-##Casa.Financas.Interfaces
+### Casa.Financas.Interfaces
 <P>Namespace reservado somente para as interfaces.</p>
 
-##Casa.Financas.Visual
+### Casa.Financas.Visual
 <p>Todos os forms criados são estão alocados nessa namespace.</p>
 
-##Casa.Financas.ExceptionEntidade
+### Casa.Financas.ExceptionEntidade
 <p>Todas as classes que herdam de Exception ou alguma de suas derivações, são clases criadas especificamente para o lançamento
 de exceções.</p>
 
 # Compilação e testes
-<p>O projeto foi construido com base no .NET Framework __4.6.1__</p>
+<p>O projeto foi construido com base no .NET Framework 4.6.1</p>
 <p>Ainda não possui rotina de testes automatizados</p>
 
 # Contribuição 
