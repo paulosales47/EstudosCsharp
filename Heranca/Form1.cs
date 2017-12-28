@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Casa.Financas.Entidade;
 using Casa.Financas.ExceptionEntidade;
+using Casa.Financas.Interface;
 
 namespace Casa.Financas.Visual
 {
     public partial class Form1 : Form
     {
-        private Conta[] contas;
+        private List<Conta> contas  = new List<Conta>();
         private int indiceSelecionado = 0;
-        private int contasCadastradas = 0;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -36,13 +36,10 @@ namespace Casa.Financas.Visual
             cb.Titular = "Usuário B";
             cb.NumeroConta = 2;
             cb.Deposita(50000);
-
-            this.contas = new ContaCorrente[4];
-            this.contas[0] = ca;
-            this.contas[1] = cb;
-            contasCadastradas = 2;
-
-
+            
+            this.contas.Add(ca);
+            this.contas.Add(cb);
+            
             comboContas.Items.Add(contas[0].Titular);
             comboContas.Items.Add(contas[1].Titular);
 
@@ -132,8 +129,7 @@ namespace Casa.Financas.Visual
         {
             try
             {
-                this.contas[contasCadastradas] = conta;
-                contasCadastradas++;
+                this.contas.Add((ContaCorrente) conta);
                 comboContas.Items.Add(conta.Titular);
             }
             catch (IndexOutOfRangeException)
@@ -147,6 +143,7 @@ namespace Casa.Financas.Visual
             FormularioDeCadastro cadastro = new FormularioDeCadastro(this);
             cadastro.ShowDialog();
         }
+
     }
 }
 

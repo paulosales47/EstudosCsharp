@@ -14,10 +14,6 @@ namespace Casa.Financas.Entidade
             this.saldo -= valor + 0.1;
         }
 
-        public override void Deposita(double valor) {
-            this.saldo = valor;
-        }
-
         public double CalculaAtributo()
         {
             return this.saldo * 0.02;

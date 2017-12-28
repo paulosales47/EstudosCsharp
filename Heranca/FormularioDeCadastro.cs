@@ -21,17 +21,45 @@ namespace Casa.Financas.Visual
         {
             this.aplicacaoPrincipal = aplicacaoPrincipal;
             InitializeComponent();
+
+            comboTipoConta.Items.Add("Conta Corrente");
+            comboTipoConta.Items.Add("Conta Poupança");
+            comboTipoConta.Items.Add("Conta Investimento");
         }
 
         private void buttonCadastroCliente_Click(object sender, EventArgs e)
         {
-            ContaCorrente cc = new ContaCorrente();
+            Conta conta = null;
             try
             {
-                cc.Titular = textNomeTitularCadastro.Text.ToString();
-                cc.NumeroConta = int.Parse(textNumeroContaCadastro.Text.ToString());
-                cc.Deposita(double.Parse(textSaldoInicialCadastro.Text.ToString()));
-                aplicacaoPrincipal.AdicionaConta(cc);
+                int tipoConta = comboTipoConta.SelectedIndex;
+
+                string titular = textNomeTitularCadastro.Text.ToString();
+                int numeroDaConta = int.Parse(textNumeroContaCadastro.Text.ToString());
+                double saldoInicial = double.Parse(textSaldoInicialCadastro.Text.ToString());
+
+                if(tipoConta == 0)
+                {
+                    conta = new ContaCorrente();
+                }
+                else if(tipoConta == 1)
+                {
+                    conta = new ContaPoupanca();
+                }
+                else if(tipoConta == 2)
+                {
+                    conta = new ContaInvestimento();
+                }
+                else
+                {
+                    throw new FormatException();
+                }
+
+                conta.Titular = titular;
+                conta.NumeroConta = numeroDaConta;
+                conta.Deposita(saldoInicial);
+            
+                aplicacaoPrincipal.AdicionaConta(conta);
             }
             catch(OverflowException)
             {
