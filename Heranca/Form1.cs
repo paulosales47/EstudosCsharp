@@ -30,11 +30,11 @@ namespace Casa.Financas.Visual
 
             ca.Titular = "Usuário A";
             ca.NumeroConta = 1;
-            ca.Deposita(10000);
+            ca.Deposita(100000);
 
             cb.Titular = "Usuário B";
             cb.NumeroConta = 2;
-            cb.Deposita(5000);
+            cb.Deposita(50000);
 
             this.contas = new ContaCorrente[2];
             this.contas[0] = ca;
