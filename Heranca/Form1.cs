@@ -20,6 +20,7 @@ namespace Casa.Financas.Visual
         public Form1()
         {
             InitializeComponent();
+            
             #region Caixa Eletronico
             ContaCorrente ca = new ContaCorrente();
             ContaCorrente cb = new ContaCorrente();
@@ -203,3 +204,21 @@ namespace Casa.Financas.Visual
 
 //MessageBox.Show(tdt.Total.ToString());
 #endregion Testando Interface
+
+#region Testes na classe Object
+//ContaCorrente cc1 = new ContaCorrente();
+//ContaCorrente cc2 = new ContaCorrente();
+//ContaCorrente cc3 = cc1;
+
+//cc1.NumeroConta = 1;
+//cc2.NumeroConta = 1;
+//cc1.Titular = "Paulo Henrique Sales Sampaio";
+//cc2.Titular = "Laís Silva Amorim";
+
+//MessageBox.Show("Iguais: " + cc1.Equals(cc2));
+//MessageBox.Show("Iguais: " + cc1.Equals(cc3));
+
+
+//MessageBox.Show(cc1.ToString());
+//MessageBox.Show(cc2.ToString());
+#endregion Testes na classe Object

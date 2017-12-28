@@ -7,7 +7,7 @@ using Casa.Financas.ExceptionEntidade;
 
 namespace Casa.Financas.Entidade
 {
-    class ContaCorrente : Conta
+    public class ContaCorrente : Conta
     {
         public override void Saca(double valor)
         {
@@ -32,8 +32,23 @@ namespace Casa.Financas.Entidade
             }
 
             this.saldo += valor;
-            
         }
 
+        public override bool Equals(object obj)
+        {
+
+            ContaCorrente cc = (ContaCorrente)obj;
+            return this.NumeroConta.Equals(cc.NumeroConta);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return "O nome do titular é: "+ this.Titular+" e o numero da conta: "+this.NumeroConta;
+        }
     }
 }
