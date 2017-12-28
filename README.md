@@ -22,7 +22,7 @@ Projeto utilizado para realização do curso de C# da Alura.
 de exceções.</p>
 
 # Compilação e testes
-<p>O projeto foi construido com base no .NET Framework ** 4.6.1 **</p>
+<p>O projeto foi construido com base no .NET Framework 4.6.1</p>
 <p>Ainda não possui rotina de testes automatizados</p>
 
 # Contribuição 
