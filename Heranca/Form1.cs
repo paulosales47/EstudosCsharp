@@ -40,11 +40,12 @@ namespace Casa.Financas.Visual
             this.contas[0] = ca;
             this.contas[1] = cb;
 
-            comboContas.Items.Add(contas[0].Titular);
-            comboContas.Items.Add(contas[1].Titular);
-
-            comboDestino.Items.Add(contas[0].Titular);
-            comboDestino.Items.Add(contas[1].Titular);
+            foreach(ContaCorrente cc in contas)
+            {
+                comboContas.Items.Add(cc.Titular);
+                comboDestino.Items.Add(cc.Titular);
+            }
+            
             #endregion Caixa Eletronico
 
         }
