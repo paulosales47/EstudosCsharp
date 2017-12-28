@@ -43,12 +43,11 @@ namespace Casa.Financas.Visual
             contasCadastradas = 2;
 
 
-            foreach(ContaCorrente cc in contas)
-            {
-                comboContas.Items.Add(cc.Titular);
-                comboDestino.Items.Add(cc.Titular);
-            }
-            
+            comboContas.Items.Add(contas[0].Titular);
+            comboContas.Items.Add(contas[1].Titular);
+
+            comboDestino.Items.Add(contas[0].Titular);
+            comboDestino.Items.Add(contas[1].Titular);
             #endregion Caixa Eletronico
 
         }
