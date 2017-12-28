@@ -2,11 +2,11 @@
 Projeto utilizado para realização do curso de C# da Alura.
 
 # Começando
-O projeto está dividido em quatro namespaces principais
-1.	Casa.Financas.Entidades
-2.	Casa.Financas.Interfaces
-3.	Casa.Financas.Visual
-4.	Casa.Financas.ExceptionEntidade
+>O projeto está dividido em quatro namespaces principais
+>> 1. Casa.Financas.Entidades
+>> 2. Casa.Financas.Interfaces
+>> 3. Casa.Financas.Visual
+>> 4. Casa.Financas.ExceptionEntidade
 
 ### Casa.Financas.Entidades
 <p>Trata-se do namespace de todas as classes sem função específica dentro do projeto.</p>
