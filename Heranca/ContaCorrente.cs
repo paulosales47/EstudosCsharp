@@ -31,6 +31,11 @@ namespace Casa.Financas.Entidade
                 throw new OverflowException("Limite de valor alcançado");
             }
 
+            if(valor < 0)
+            {
+                throw new ArgumentException("O valor do deposito não pode ser negativo");
+            }
+
             this.saldo += valor;
         }
 

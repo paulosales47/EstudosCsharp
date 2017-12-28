@@ -14,8 +14,9 @@ namespace Casa.Financas.Visual
 {
     public partial class Form1 : Form
     {
-        private ContaCorrente[] contas;
+        private Conta[] contas;
         private int indiceSelecionado = 0;
+        private int contasCadastradas = 0;
 
         public Form1()
         {
@@ -36,9 +37,11 @@ namespace Casa.Financas.Visual
             cb.NumeroConta = 2;
             cb.Deposita(50000);
 
-            this.contas = new ContaCorrente[2];
+            this.contas = new ContaCorrente[4];
             this.contas[0] = ca;
             this.contas[1] = cb;
+            contasCadastradas = 2;
+
 
             foreach(ContaCorrente cc in contas)
             {
@@ -124,6 +127,26 @@ namespace Casa.Financas.Visual
             {
                 MessageBox.Show(er.ToString());
             }
+        }
+
+        public void AdicionaConta(Conta conta)
+        {
+            try
+            {
+                this.contas[contasCadastradas] = conta;
+                contasCadastradas++;
+                comboContas.Items.Add(conta.Titular);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("Não é possível cadastrar mais contas.");
+            }
+        }
+
+        private void buttonAbreFormularioCadastroCliente_Click(object sender, EventArgs e)
+        {
+            FormularioDeCadastro cadastro = new FormularioDeCadastro(this);
+            cadastro.ShowDialog();
         }
     }
 }
