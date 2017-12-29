@@ -21,7 +21,6 @@ namespace Casa.Financas.Visual
         public Form1()
         {
             InitializeComponent();
-            
             #region Caixa Eletronico
             ContaCorrente ca = new ContaCorrente();
             ContaCorrente cb = new ContaCorrente();
@@ -46,7 +45,6 @@ namespace Casa.Financas.Visual
             comboDestino.Items.Add(contas[0].Titular);
             comboDestino.Items.Add(contas[1].Titular);
             #endregion Caixa Eletronico
-
         }
 
         private void comboContas_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,7 +150,19 @@ namespace Casa.Financas.Visual
             comboNumero.Text = "";
         }
     }
-} 
+}
+
+#region Testes com HahSet
+//var conjunto = new HashSet<Conta>();
+//var cc1 = new ContaCorrente();
+//var cc2 = new ContaCorrente();
+////cc2 = cc1;
+//conjunto.Add(cc1);
+//conjunto.Add(cc2);
+
+//MessageBox.Show(conjunto.Count.ToString());
+//cc2 = cc1;
+#endregion Testes com HashSet
 
 #region Caixa Eletronico
 //Conta ca = new ContaCorrente();
