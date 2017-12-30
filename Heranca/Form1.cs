@@ -56,14 +56,18 @@ namespace Casa.Financas.Visual
 
                 Stream entrada = File.Open(filePath, FileMode.Open);
                 StreamReader leitor = new StreamReader(entrada);
+                
+                //COMPLETO
+                string texto = leitor.ReadToEnd();
+                textBoxArquivo.Text = texto;
 
                 //LINHA-A-LINHA
-                string linha = leitor.ReadLine();
-                while (linha != null)
-                {
-                    textBoxArquivo.Text += linha;
-                    linha = leitor.ReadLine();
-                }
+                //string linha = leitor.ReadLine();
+                //while (linha != null)
+                //{
+                //    textBoxArquivo.Text += linha;
+                //    linha = leitor.ReadLine();
+                //}
 
                 leitor.Close();
                 entrada.Close();
