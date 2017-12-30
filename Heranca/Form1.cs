@@ -21,6 +21,7 @@ namespace Casa.Financas.Visual
         public Form1()
         {
             InitializeComponent();
+
             #region Caixa Eletronico
             ContaCorrente ca = new ContaCorrente();
             ContaCorrente cb = new ContaCorrente();
@@ -151,6 +152,24 @@ namespace Casa.Financas.Visual
         }
     }
 }
+
+#region Testes com Dictionary
+//Dictionary<string, Conta> dicionarioContas = new Dictionary<string, Conta>();
+//Conta c = new ContaCorrente();
+//dicionarioContas.Add("Paulo", c);
+//MessageBox.Show(dicionarioContas["Paulo"].ToString());
+#endregion Testes com Dictionary
+
+#region Testes com SortedSet
+//SortedSet<string> palavras = new SortedSet<string>();
+//palavras.Add("vida");
+//palavras.Add("furadeira");
+//palavras.Add("maçã");
+//foreach (string palavra in palavras)
+//{
+//    MessageBox.Show(palavra);
+//}
+#endregion Testes com SortedSet
 
 #region Testes com HahSet
 //var conjunto = new HashSet<Conta>();
