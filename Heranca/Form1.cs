@@ -53,24 +53,21 @@ namespace Casa.Financas.Visual
             
             if (File.Exists(filePath))
             {
+                using (Stream entrada = File.Open(filePath, FileMode.Open))
+                using (StreamReader leitor = new StreamReader(entrada))
+                {
+                    //COMPLETO
+                    string texto = leitor.ReadToEnd();
+                    textBoxArquivo.Text = texto;
 
-                Stream entrada = File.Open(filePath, FileMode.Open);
-                StreamReader leitor = new StreamReader(entrada);
-                
-                //COMPLETO
-                string texto = leitor.ReadToEnd();
-                textBoxArquivo.Text = texto;
-
-                //LINHA-A-LINHA
-                //string linha = leitor.ReadLine();
-                //while (linha != null)
-                //{
-                //    textBoxArquivo.Text += linha;
-                //    linha = leitor.ReadLine();
-                //}
-
-                leitor.Close();
-                entrada.Close();
+                    //LINHA-A-LINHA
+                    //string linha = leitor.ReadLine();
+                    //while (linha != null)
+                    //{
+                    //    textBoxArquivo.Text += linha;
+                    //    linha = leitor.ReadLine();
+                    //}
+                }
             }
    
         }
