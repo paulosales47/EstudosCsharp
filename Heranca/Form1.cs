@@ -153,6 +153,50 @@ namespace Casa.Financas.Visual
     }
 }
 
+#region SortedDictionary
+//SortedDictionary<string, string> nomes = new SortedDictionary<string, string>();
+//nomes.Add("Adriano", "Almeida");
+//nomes.Add("Mario", "Amaral");
+//nomes.Add("Eric", "Torti");
+//nomes.Add("Guilherme", "Silveira");
+//foreach (var i in nomes)
+//{
+//    MessageBox.Show(i.Key + " " + i.Value);
+//}
+#endregion SortedDictionary
+    
+#region Teste foreach com Dictionary
+//Dictionary<string, string> nomesEPalavras = new Dictionary<string, string>();
+//nomesEPalavras.Add("Paulo", "Sampaio");
+//nomesEPalavras.Add("Nome", "Sobrenome");
+//nomesEPalavras.Add("Nome1", "Sobrenome1");
+//nomesEPalavras.Add("Nome2", "Sobrenome2");
+
+//foreach (var i in nomesEPalavras)
+//{
+//    MessageBox.Show(i.Key + "->" + i.Value);
+//}
+#endregion Teste foreach com Dictionary
+
+#region Testes com Foreach
+//List<Conta> listaDeContas = new List<Conta>();
+//Conta cc1 = new ContaCorrente();
+//Conta cc2 = new ContaCorrente();
+//Conta cc3 = new ContaCorrente();
+
+//cc1.Titular = "Paulo";
+//cc2.Titular = "Titular 2";
+//cc3.Titular = "Titular 3";
+//listaDeContas.Add(cc1);
+//listaDeContas.Add(cc2);
+//listaDeContas.Add(cc3);
+
+//foreach (var conta in listaDeContas)
+//{
+//    MessageBox.Show(conta.Titular+" - ");
+//}
+#endregion Testes com Foreach
+
 #region Testes com Dictionary
 //Dictionary<string, Conta> dicionarioContas = new Dictionary<string, Conta>();
 //Conta c = new ContaCorrente();
