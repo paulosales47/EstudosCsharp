@@ -44,6 +44,8 @@
             this.comboDestino = new System.Windows.Forms.ComboBox();
             this.buttonAbrirFormularioCadastroCliente = new System.Windows.Forms.Button();
             this.buttonExcluirCliente = new System.Windows.Forms.Button();
+            this.textBoxArquivo = new System.Windows.Forms.TextBox();
+            this.buttonSalvarTextoArquivo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,11 +197,31 @@
             this.buttonExcluirCliente.UseVisualStyleBackColor = false;
             this.buttonExcluirCliente.Click += new System.EventHandler(this.buttonExcluirCliente_Click);
             // 
+            // textBoxArquivo
+            // 
+            this.textBoxArquivo.Location = new System.Drawing.Point(16, 374);
+            this.textBoxArquivo.Multiline = true;
+            this.textBoxArquivo.Name = "textBoxArquivo";
+            this.textBoxArquivo.Size = new System.Drawing.Size(253, 201);
+            this.textBoxArquivo.TabIndex = 13;
+            // 
+            // buttonSalvarTextoArquivo
+            // 
+            this.buttonSalvarTextoArquivo.Location = new System.Drawing.Point(16, 590);
+            this.buttonSalvarTextoArquivo.Name = "buttonSalvarTextoArquivo";
+            this.buttonSalvarTextoArquivo.Size = new System.Drawing.Size(252, 23);
+            this.buttonSalvarTextoArquivo.TabIndex = 14;
+            this.buttonSalvarTextoArquivo.Text = "Salvar Texto";
+            this.buttonSalvarTextoArquivo.UseVisualStyleBackColor = true;
+            this.buttonSalvarTextoArquivo.Click += new System.EventHandler(this.buttonSalvarTextoArquivo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 362);
+            this.ClientSize = new System.Drawing.Size(284, 625);
+            this.Controls.Add(this.buttonSalvarTextoArquivo);
+            this.Controls.Add(this.textBoxArquivo);
             this.Controls.Add(this.buttonExcluirCliente);
             this.Controls.Add(this.buttonAbrirFormularioCadastroCliente);
             this.Controls.Add(this.groupBox1);
@@ -240,6 +262,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonAbrirFormularioCadastroCliente;
         private System.Windows.Forms.Button buttonExcluirCliente;
+        private System.Windows.Forms.TextBox textBoxArquivo;
+        private System.Windows.Forms.Button buttonSalvarTextoArquivo;
     }
 }
 

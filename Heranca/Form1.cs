@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,28 @@ namespace Casa.Financas.Visual
             comboDestino.Items.Add(contas[0].Titular);
             comboDestino.Items.Add(contas[1].Titular);
             #endregion Caixa Eletronico
+
+
+            string filePath = @"C:\SQL\README.md";
+            
+            if (File.Exists(filePath))
+            {
+
+                Stream entrada = File.Open(filePath, FileMode.Open);
+                StreamReader leitor = new StreamReader(entrada);
+
+                //LINHA-A-LINHA
+                string linha = leitor.ReadLine();
+                while (linha != null)
+                {
+                    textBoxArquivo.Text += linha;
+                    linha = leitor.ReadLine();
+                }
+
+                leitor.Close();
+                entrada.Close();
+            }
+   
         }
 
         private void comboContas_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,8 +173,38 @@ namespace Casa.Financas.Visual
             comboSaldo.Text = "";
             comboNumero.Text = "";
         }
+
+        private void buttonSalvarTextoArquivo_Click(object sender, EventArgs e)
+        {
+            string filePath = @"C:\SQL\README.md";
+
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath);
+            }
+
+            Stream saida = File.Open(filePath, FileMode.Create);
+            StreamWriter escritor = new StreamWriter(saida);
+            escritor.Write(textBoxArquivo.Text);
+            escritor.Close();
+            saida.Close();
+        }
     }
 }
+
+#region String
+//int idade = 21;
+//string nome = "Paulo Henrique";
+//string mensagem = string.Format("Olá {0}, a sua idade é: {1} anos", nome, idade);
+//MessageBox.Show(mensagem);
+
+//string dados = "Paulo Henrique,21,São José dos Campos,Brasil";
+//string[] partes = dados.Split(',');
+//foreach(string parte in partes)
+//{
+//    MessageBox.Show(parte);
+//}
+#endregion String
 
 #region SortedDictionary
 //SortedDictionary<string, string> nomes = new SortedDictionary<string, string>();
@@ -164,7 +217,7 @@ namespace Casa.Financas.Visual
 //    MessageBox.Show(i.Key + " " + i.Value);
 //}
 #endregion SortedDictionary
-    
+
 #region Teste foreach com Dictionary
 //Dictionary<string, string> nomesEPalavras = new Dictionary<string, string>();
 //nomesEPalavras.Add("Paulo", "Sampaio");
