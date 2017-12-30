@@ -46,6 +46,7 @@
             this.buttonExcluirCliente = new System.Windows.Forms.Button();
             this.textBoxArquivo = new System.Windows.Forms.TextBox();
             this.buttonSalvarTextoArquivo = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -215,11 +216,22 @@
             this.buttonSalvarTextoArquivo.UseVisualStyleBackColor = true;
             this.buttonSalvarTextoArquivo.Click += new System.EventHandler(this.buttonSalvarTextoArquivo_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(278, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Teste";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 625);
+            this.ClientSize = new System.Drawing.Size(374, 625);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonSalvarTextoArquivo);
             this.Controls.Add(this.textBoxArquivo);
             this.Controls.Add(this.buttonExcluirCliente);
@@ -264,6 +276,7 @@
         private System.Windows.Forms.Button buttonExcluirCliente;
         private System.Windows.Forms.TextBox textBoxArquivo;
         private System.Windows.Forms.Button buttonSalvarTextoArquivo;
+        private System.Windows.Forms.Button button2;
     }
 }
 

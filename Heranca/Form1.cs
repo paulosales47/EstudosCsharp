@@ -47,29 +47,6 @@ namespace Casa.Financas.Visual
             comboDestino.Items.Add(contas[0].Titular);
             comboDestino.Items.Add(contas[1].Titular);
             #endregion Caixa Eletronico
-
-
-            string filePath = @"C:\SQL\README.md";
-            
-            if (File.Exists(filePath))
-            {
-                using (Stream entrada = File.Open(filePath, FileMode.Open))
-                using (StreamReader leitor = new StreamReader(entrada))
-                {
-                    //COMPLETO
-                    string texto = leitor.ReadToEnd();
-                    textBoxArquivo.Text = texto;
-
-                    //LINHA-A-LINHA
-                    //string linha = leitor.ReadLine();
-                    //while (linha != null)
-                    //{
-                    //    textBoxArquivo.Text += linha;
-                    //    linha = leitor.ReadLine();
-                    //}
-                }
-            }
-   
         }
 
         private void comboContas_SelectedIndexChanged(object sender, EventArgs e)
@@ -190,8 +167,100 @@ namespace Casa.Financas.Visual
             escritor.Close();
             saida.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+#region LINQ e Lambda
+//Conta cc1 = new ContaCorrente();
+//Conta cc2 = new ContaCorrente();
+//Conta cc3 = new ContaCorrente();
+//cc1.Deposita(1000);
+//cc2.Deposita(2000);
+//cc3.Deposita(3000);
+//var lista = new List<Conta>();
+//lista.Add(cc1);
+//lista.Add(cc2);
+//lista.Add(cc3);
+
+////FILTRAR CONTAS COM SALDO MAIOR IGUAL A 2000
+//var filtrados = from c in lista
+//                where c.saldo >= 2000
+//                select c;
+
+////TOTAL DE SALDO DAS CONTAS FILTRADAS
+//double total = filtrados.Sum(c => c.saldo);
+
+////CONTAS EM QUE O NOME DO TITULAR COMEÇA COM A LETRA G
+//var filtradosNomne = from c in lista
+//    where c.Titular.StartsWith("G")
+//    select c;
+
+////LAMBDA DENTRO DA CLAUSULA WHERE
+//var filtradosLambda = lista.Where(c => c.NumeroConta < 1000 && c.saldo > 5000.0);
+
+////SUM
+//int[] inteiros = new int[5] { 100, 25, 15, 35, 50 };
+//var soma = inteiros.Where(i => i > 10).Sum();
+
+////ORDENAÇÃO VETOR
+//var ordenados = from ord in inteiros
+//                orderby ord
+//                select ord;
+
+////ORDENAÇÃO VETOR + WHERE
+//var ordenadosWhere = from ord in inteiros
+//                     where ord > 10
+//                     orderby ord
+//                    select ord;
+
+////ORDENAÇÃO OBJETO + WHERE
+//var contasOrdenadas = from conta in lista
+//                      where conta.saldo > 1000
+//                      orderby conta.saldo descending
+//                      select conta;
+
+////ORDENAÇÃO OBJETO + WHERE 2
+//var resultado = lista.Where(c => c.saldo < 1000)
+//          .OrderByDescending(c => c.NumeroConta);
+
+////ORDENAÇÃO COM MAIS DE UMA CLAUSULA
+//var ordenadas = from p in lista
+//                orderby p.NumeroConta , p.saldo
+//                select p;
+////ORDENAÇÃO COM MAIS DE UMA CLAUSULA 2
+//var ordenadas2 = lista.OrderBy(c => c.saldo).ThenBy(c => c.NumeroConta);
+
+////ORDENAÇÃO COM MAIS DE UMA CLAUSULA DESCENDENTE
+//var ordenadas3 = lista.OrderBy(c => c.saldo).ThenByDescending(c => c.NumeroConta);
+#endregion LINQ e Lambda
+
+
+#region Testes com Arquivos
+//string filePath = @"C:\SQL\README.md";
+
+//if (File.Exists(filePath))
+//{
+//    using (Stream entrada = File.Open(filePath, FileMode.Open))
+//    using (StreamReader leitor = new StreamReader(entrada))
+//    {
+//        //COMPLETO
+//        string texto = leitor.ReadToEnd();
+//        textBoxArquivo.Text = texto;
+
+//        //LINHA-A-LINHA
+//        //string linha = leitor.ReadLine();
+//        //while (linha != null)
+//        //{
+//        //    textBoxArquivo.Text += linha;
+//        //    linha = leitor.ReadLine();
+//        //}
+//    }
+//}
+#endregion Testes com arquivos
 
 #region String
 //int idade = 21;
