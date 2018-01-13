@@ -174,6 +174,14 @@ namespace Casa.Financas.Visual
         }
     }
 }
+
+#region Testes com extensões
+//double valor = 100;
+
+//MessageBox.Show("teste".Plurarize());
+//MessageBox.Show(valor.Dobro().ToString());
+#endregion Testes com extensões
+
 #region LINQ e Lambda
 //Conta cc1 = new ContaCorrente();
 //Conta cc2 = new ContaCorrente();
@@ -237,7 +245,6 @@ namespace Casa.Financas.Visual
 ////ORDENAÇÃO COM MAIS DE UMA CLAUSULA DESCENDENTE
 //var ordenadas3 = lista.OrderBy(c => c.saldo).ThenByDescending(c => c.NumeroConta);
 #endregion LINQ e Lambda
-
 
 #region Testes com Arquivos
 //string filePath = @"C:\SQL\README.md";
